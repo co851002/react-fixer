@@ -1,0 +1,539 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote {
+    &:after,
+    &:before {
+        content: '';
+        content: none;
+    }
+}
+
+q {
+    &:after,
+    &:before {
+        content: '';
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    font-family: helvetica, arial, sans serif;
+    margin: 0;
+    background: #4cc5ad;
+}
+
+div#App {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.wrapper {
+    width: 60%;
+    //min-width: 320px;
+    margin: 10px auto;
+    text-align: center;
+    position: relative;
+    color: #303233;
+    padding: 10px 20px;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    background: #fdfdfd;
+
+    header {
+        margin: auto;
+        vertical-align: top;
+        width: 80%;
+        position: relative;
+        display: block;
+        font-size: 24px;
+
+        img {
+            max-width: 150px;
+            display: inline;
+            position: relative;
+            width: 30%;
+            vertical-align: top;
+        }
+
+        div {
+            max-width: 400px;
+            width: 60%;
+            display: inline-block;
+            height: 100px;
+            position: relative;
+            top: 0;
+            margin: 20px;
+            vertical-align: top;
+
+            h4 {
+                font-size: 0.8em;
+                font-weight: 600;
+            }
+
+            span {
+                font-size: 0.9rem;
+                color: #9a9595;
+                margin-top: 10px;
+                line-height: 20px;
+                display: block;
+            }
+        }
+
+        span {
+            vertical-align: top;
+        }
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    h2 {
+        margin: 0;
+        opacity: 0.6;
+        font-weight: 100;
+    }
+
+    p {
+        opacity: 0.9;
+
+        &.Shameless {
+            opacity: 0.7;
+            margin: 20px 0 0;
+
+            a {
+                text-decoration: none;
+                color: #303233;
+            }
+        }
+    }
+
+    .changeLog {
+        width: 75%;
+        margin: auto;
+        text-align: left;
+    }
+
+    .changeLog_entry {
+        margin-top: 20px;
+    }
+
+    .changeLog {
+        h3 {
+            margin: 0;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+    }
+
+    .select__wrapper {
+        text-align: left;
+        max-width: 220px;
+        border-bottom: 2px solid #4cc5ad;
+        text-align: left;
+        max-width: 220px;
+        /* width: 50%; */
+        display: block;
+        margin: 25px auto;
+        position: relative;
+
+        h3 {
+            margin: 0;
+        }
+
+        .select {
+            margin-bottom: 30px;
+        }
+    }
+}
+/******************************/
+/*    Start Component CSS     */
+/******************************/
+.select {
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+}
+
+.select__label {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 100;
+    height: 40px;
+    position: absolute;
+    opacity: 0.8;
+    color: #4cc5ad;
+
+    p {
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        margin-top: 30px;
+        margin-left: 15px;
+    }
+}
+
+.select__value {
+    font-weight: 100;
+    margin-top: 10px;
+    opacity: 0.8;
+    min-height: 20px;
+
+    p {
+        margin: 0;
+        min-height: 20px;
+    }
+}
+
+#currencySelect {
+    padding-bottom: 6px;
+    text-indent: 30px;
+}
+
+form.container {
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.select__options {
+    /* background-color: rgb(248, 248, 248); */
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    -webkit-appearance: inherit;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black !important;
+    border-radius: 0;
+    opacity: 1 !important;
+    background: transparent;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* -webkit-transition: opacity .2s, padding .2s, max-height .2s; */
+    /* transition: opacity .2s, padding .2s, max-height .2s; */
+    font-size: 1em;
+    width: 220px;
+}
+
+::-webkit-input-placeholder,
+div#placeholder {
+    color: black;
+}
+
+input#selectDate {
+    text-indent: 30px;
+}
+
+.select__options .select__option {
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+input {
+    &[type=date] + label {
+        position: absolute;
+    }
+
+    &.select__option {
+        border: none;
+        background: none;
+        font-family: helvetica, arial, sans serif;
+        font-size: 1em;
+        border: none;
+        background: none;
+        font-family: helvetica, arial, sans serif;
+        font-size: 1em;
+        color: black;
+        width: 220px;
+    }
+}
+
+.select__wrapper {
+    &.date:before {
+        content: "\F073";
+        font-family: FontAwesome;
+        left: 0;
+        font-size: 20px;
+        position: absolute;
+        top: 21px;
+        right: auto;
+        height: 30px;
+        width: 16px;
+    }
+
+    &.currency:before {
+        content: "\F155";
+        font-family: FontAwesome;
+        left: 4px;
+        font-size: 20px;
+        position: absolute;
+        top: 22px;
+        right: auto;
+        height: 30px;
+        width: 16px;
+    }
+}
+
+.buttonWrapper {
+    width: 100%;
+    margin: 50px auto;
+    display: block;
+
+    .button {
+        border: none;
+        background: #4cc5ad;
+        box-shadow: none;
+        color: #fff;
+        padding: 10px;
+        font-size: 0.8em;
+        margin: 2%;
+        display: inline-block;
+        width: 46%;
+        max-width: 150px;
+    }
+}
+
+.select__option {
+    padding-bottom: 5px;
+}
+
+.select__options {
+    &:hover,
+    &:hover .select__option:hover,
+    .select__option-active {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.select-active .select__trigger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+}
+/*.select-active*/
+.select__options {
+    max-height: 180px;
+    opacity: 1;
+}
+
+.select-active .select__label,
+.select.selected .select__label {
+    font-size: 13px;
+    font-weight: 900;
+    opacity: 1;
+}
+
+.select-active .select__label p,
+.select.selected .select__label p {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.select-deactive {
+    .select__value {
+        -webkit-animation: fadeIn 0.3s;
+        animation: fadeIn 0.3s;
+    }
+
+    .select__options {
+        background: #f4f5f7;
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+table {
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-top: 25px;
+
+    thead {
+        width: 100%;
+        display: block;
+        position: relative;
+    }
+
+    tbody {
+        width: 100%;
+        display: block;
+    }
+
+    th {
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        font-size: 1.2em;
+        color: #4cc5ad;
+    }
+
+    td {
+        width: 50%;
+        text-align: center;
+        display: inline-block;
+    }
+
+    tr {
+        width: 100%;
+        display: block;
+        position: relative;
+        line-height: 30px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    table th {
+        font-size: 0.8em;
+    }
+    .wrapper {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px 15px;
+}
+}

@@ -1,0 +1,6 @@
+{
+    "dateSelected": "",
+    "currencyOptions": ["GBP", "EUR", "USD","AUD", "CAD", "CHF", "CZK", "DKK", "HKD", "HUF","ISK", "JPY", "KRW","LTL", "LVL", "MTL", "NOK", "NZD", "PLN", "ROL", "SEK", "SGD", "SIT", "SKK", "TRL","ZAR"],
+    "currencySelection": "",
+    "dateSelection": ""
+}
