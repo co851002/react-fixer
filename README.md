@@ -33,7 +33,11 @@ http://localhost:8080/
 
 ## TODO's
 
-* Fix json error-color
-* Fix DatePicker prop type warning
-* Fix ResultsTable render
-* Deploy to or Github Pages
+* ~~Fix json error-color~~
+* ~~Fix DatePicker prop type warning~~
+* ~~Fix ResultsTable render~~
+* ~~Deploy to or Github Pages~~
+* Debounce with lodash
+* Use lodash for backward compatibility issue with Object.keys  
+* Add loader screen for results
+* Webpack path fix for css and json file

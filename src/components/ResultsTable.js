@@ -2,9 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import NewFormContainer from './../containers/newFormContainer';
 
-var rates = {};
-
-const ResultsTable = (props) => (
+const ResultsTable = ({ rates }) => (
 
 
 <div className="table">
@@ -16,7 +14,8 @@ const ResultsTable = (props) => (
         </tr>
      </thead>
      <tbody>
-       {Object.keys(rates).map(function(value,idx) {
+       {Object.keys(rates).map((value,idx) => {
+        //Needs polyfill for backward compatibility _.keys()  or import { keys } from ‘lodash’; keys()
          return <tr key={idx}>
            <td>{value}</td>
            <td>{rates[value]}</td>
@@ -29,6 +28,7 @@ const ResultsTable = (props) => (
 
 ResultsTable.propTypes = {
 	name: React.PropTypes.string,
+  rates: React.PropTypes.object.isRequired
 	//controlFunc: React.PropTypes.func.isRequired,
   //options: React.PropTypes.array.isRequired
 

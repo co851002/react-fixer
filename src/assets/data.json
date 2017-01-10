@@ -1,6 +1,6 @@
 {
     "dateSelected": "",
-    "currencyOptions": ["GBP", "EUR", "USD","AUD", "CAD", "CHF", "CZK", "DKK", "HKD", "HUF","ISK", "JPY", "KRW","LTL", "LVL", "MTL", "NOK", "NZD", "PLN", "ROL", "SEK", "SGD", "SIT", "SKK", "TRL","ZAR"],
+    "currencyOptions": ["AUD", "BGN", "BRL", "CAD", "CHF", "CZK", "DKK", "GBP", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "USD", "ZAR"],
     "currencySelection": "",
     "dateSelection": ""
 }

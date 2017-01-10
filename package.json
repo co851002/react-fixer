@@ -1,12 +1,12 @@
 {
-  "name": "fixerReact",
+  "name": "react-fixer",
   "version": "1.0.0",
-  "description": "fixer",
-  "repository": "repo.git",
+  "description": "react-fixer",
+  "repository": "https://github.com/co851002/react-fixer",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
-    "postinstall": "webpack -p"
+    "build": "webpack -p"
   },
   "keywords": [
     "react",

@@ -11,7 +11,7 @@ class NewFormContainer extends Component {
 			dateSelected: '',
 			currencyOptions: [],
 			resultsOptions: [],
-			rates:[]
+			rates:{}
 
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -31,7 +31,6 @@ class NewFormContainer extends Component {
 						this.setState({
 							dateSelected: data.dateSelected,
 							currencyOptions: data.currencyOptions,
-							rates: data.rates
 						});
 					});
 	}
@@ -68,19 +67,17 @@ class NewFormContainer extends Component {
 	const base = this.state.currencySelected;
 	const API_request = `https://api.fixer.io/${date}?base=${base}`;
 
-	console.log('Date is: '+date);
-	console.log('Base Rate is: '+base);
-	console.log('API Request is '+API_request);
+	//console.log('Date is: '+date);
+	//console.log('Base Rate is: '+base);
+	//console.log('API Request is '+API_request);
 
 	var th = this;
 		this.serverRequest =
       axios.get(API_request)
       .then(function(result) {
-        console.log(result.data.rates)
         th.setState({
           rates: result.data.rates
         });
-				// TODO: --->>>>>>>     console.log(th.state.rates)
       });
 	}
 
@@ -89,6 +86,7 @@ class NewFormContainer extends Component {
 		this.setState({
 			dateSelected: '',
 			currencySelected: '',
+			rates:{}
 		});
 	}
 
@@ -98,14 +96,14 @@ class NewFormContainer extends Component {
 			dateSelected: this.state.dateSelected,
 			currencySelected: this.state.currencySelected,
 		};
-		//console.log('Send this in a GET request:', formPayload);
-		//this.handleClearForm(e);
-		//this.handleResults(e);
+
 	}
 
 
 
 	render() {
+		const { rates } = this.state;
+
 		return (
 			<div className="container">
 
@@ -145,6 +143,7 @@ class NewFormContainer extends Component {
 				<h2>Results</h2>
 				<ResultsTable
 					name={'ResultsTable'}
+					rates={rates}
 					/>
 			</div>
 

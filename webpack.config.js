@@ -5,6 +5,15 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   context: __dirname,
   entry: "./src/index.js",
+  output: {
+    path: __dirname,
+    filename: "bundle.js"
+  },
+  resolve: {
+      alias: {
+        //components: `${PATHS.app}/components`,
+      }
+  },
   module: {
     loaders: [
       {
@@ -30,10 +39,7 @@ module.exports = {
 
     ]
   },
-  output: {
-    path: __dirname,
-    filename: "bundle.js"
-  },
+
   plugins: [
     new ExtractTextPlugin('src/assets/stylesheets/app.css', { allChunks: true })
   ]
