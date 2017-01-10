@@ -30,7 +30,7 @@ class NewFormContainer extends Component {
 	}
 
 	componentDidMount() {
-		const req = fetch('/react-fixer/src/assets/data.json')
+		const req = fetch('./src/assets/data.json')
 					.then(result => result.json())
 					.then(data => {
 						//console.log(data);
