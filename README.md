@@ -4,6 +4,8 @@
 ## Live demo
 
 https://co851002.github.io/react-fixer/
+or (to avoid gh-pages cache)
+https://co851002.github.io/react-fixer/index.html
 
 ## Usage
 
