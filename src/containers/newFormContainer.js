@@ -23,8 +23,14 @@ class NewFormContainer extends Component {
 
 	}
 
+	getInitialState(){
+		return{
+			isLoading: false
+		};
+	}
+
 	componentDidMount() {
-		const req = fetch('./src/assets/data.json')
+		const req = fetch('/react-fixer/src/assets/data.json')
 					.then(result => result.json())
 					.then(data => {
 						//console.log(data);
@@ -71,14 +77,23 @@ class NewFormContainer extends Component {
 	//console.log('Base Rate is: '+base);
 	//console.log('API Request is '+API_request);
 
+	this.setState({isLoading: true});
+
 	var th = this;
 		this.serverRequest =
       axios.get(API_request)
       .then(function(result) {
         th.setState({
-          rates: result.data.rates
+          rates: result.data.rates,
+					isLoading: false
         });
-      });
+      }, function (error){
+				alert('Failed to fetch currrency data');
+				th.setState({
+					rates:{},
+					isLoading: false
+        });
+			});
 	}
 
 	handleClearForm(e) {
@@ -102,7 +117,15 @@ class NewFormContainer extends Component {
 
 
 	render() {
-		const { rates } = this.state;
+		const { isLoading, rates } = this.state;
+
+		function renderMessage (){
+			if (isLoading){
+				return <div class="loader-item"><div class="loader loader-spinner"></div></div>;
+			} else if (rates) {
+				return <ResultsTable name={'ResultsTable'} rates={rates}/>;
+			}
+		}
 
 		return (
 			<div className="container">
@@ -141,10 +164,7 @@ class NewFormContainer extends Component {
 
 			<div className="wrapper">
 				<h2>Results</h2>
-				<ResultsTable
-					name={'ResultsTable'}
-					rates={rates}
-					/>
+				{renderMessage()}
 			</div>
 
 		</div>

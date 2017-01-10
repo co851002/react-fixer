@@ -41,7 +41,7 @@ http://localhost:8080/
 * ~~Fix DatePicker prop type warning~~
 * ~~Fix ResultsTable render~~
 * ~~Deploy to or Github Pages~~
-* Debounce with lodash
 * Use lodash for backward compatibility issue with Object.keys  
-* Add loader screen for results
+* ~~Add loader screen for results~~
+* ~~Add better error handling for no network connection and API failure~~
 * Webpack path fix for css and json file

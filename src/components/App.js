@@ -11,7 +11,7 @@ class App extends Component {
               <img src={require("../assets/img/money.png")} />
               <div>
                 <h4>fixer.io</h4>
-                <span>Get historical foreign exchange rates<br/> ranging from 2000 to date</span>
+                <span>Get historical foreign exchange rates ranging from 2000 to date</span>
               </div>
             </header>
             <NewFormContainer />
